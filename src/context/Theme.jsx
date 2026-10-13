@@ -1,0 +1,1 @@
+import React,{createContext,useContext,useState} from 'react';const Context=createContext(null);export function ThemeProvider({children}){const [dark,setDark]=useState(false);return <Context.Provider value={{dark,toggle:()=>setDark(x=>!x)}}><div className={dark?'app dark':'app'}>{children}</div></Context.Provider>}export const useTheme=()=>useContext(Context);
